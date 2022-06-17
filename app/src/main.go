@@ -1,24 +1,20 @@
 package main
 
-import (
-	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
-	"net/http"
-)
+import "app/src/controller"
 
 func main() {
+	controller.Init()
 
-	e := echo.New()
+	//articleテーブルのデータを出力
+	//var article []models.Article
+	//db := models.DatabaseConnection()
+	//articles := db.Find(&article)
+	//fmt.Println(articles)
 
-	// Middleware
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
-	e.Use(middleware.CORS())
-
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, Echo World!!")
-	})
-
-	// start server
-	e.Logger.Fatal(e.Start(":8080"))
+	//DB接続テスト
+	//_, err := models.DatabaseConnection()
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//fmt.Println("接続成功しました")
 }
