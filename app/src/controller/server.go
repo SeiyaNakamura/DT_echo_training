@@ -31,14 +31,10 @@ func Init() {
 
 	//router
 	e.GET("/", hello)
+	//articleテーブルのデータを出力
 	e.GET("/test", Test)
-
-	//http.HandleFunc("/index", mainHandler)
-	//http.HandleFunc("/test", testHandler)
 
 	// start server
 	e.Logger.Fatal(e.Start(":8080"))
-
-	//return http.ListenAndServe(":8080", nil)
 
 }
