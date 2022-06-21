@@ -3,7 +3,12 @@ package main
 import "app/src/controller"
 
 func main() {
-	controller.Init()
+	e := controller.Init()
+
+	SetStaticRoute(e)
+
+	// start server
+	e.Logger.Fatal(e.Start(":8080"))
 
 	//articleテーブルのデータを出力
 	//var article []models.Article

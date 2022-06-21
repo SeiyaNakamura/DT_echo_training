@@ -9,7 +9,7 @@ import (
 const (
 	USER   string = "root"
 	PASS   string = "deeptrack"
-	HOST   string = "localhost"
+	HOST   string = "mysql-container"
 	DBNAME string = "DeepTrack"
 	OPTION string = "charset=utf8&parseTime=True&loc=Local"
 )

@@ -1,11 +1,17 @@
-<!DOCTYPE html>
+{{define "index"}}
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>{{ .Title }}</title>
+    <title>タイトル</title>
+    <link rel="stylesheet" href="/css/test.css">
 </head>
 <body>
 <h1>一覧表示</h1>
-{{.}}
+    <div>
+        {{ range . }}
+            <p>{{.Title}}</p>
+        {{ end }}
+    </div>
 </body>
 </html>
+{{end}}

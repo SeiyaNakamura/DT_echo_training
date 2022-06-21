@@ -15,7 +15,7 @@ func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Con
 	return t.templates.ExecuteTemplate(w, name, data)
 }
 
-func Init() {
+func Init() *echo.Echo {
 
 	list, err := template.New("t").ParseGlob("template/*.html")
 	t := &Template{
@@ -34,7 +34,8 @@ func Init() {
 	//articleテーブルのデータを出力
 	e.GET("/test", Test)
 
-	// start server
-	e.Logger.Fatal(e.Start(":8080"))
+	e.GET("/index", Index)
+
+	return e
 
 }
