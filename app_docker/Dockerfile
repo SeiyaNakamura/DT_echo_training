@@ -1,11 +1,11 @@
 # Dockerfile
-FROM golang:1.17.7-alpine
+FROM golang:1.18.10-alpine
 
 # ログに出力する時間をJSTにするため、タイムゾーンを設定
 ENV TZ /usr/share/zoneinfo/Asia/Tokyo
 
 RUN apk update && apk add git
-RUN go get github.com/cosmtrek/air@latest
+RUN go install github.com/cosmtrek/air@latest
 
 ENV ROOT=/go/src/app
 WORKDIR ${ROOT}/src
