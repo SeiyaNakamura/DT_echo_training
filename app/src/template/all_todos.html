@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>ToDo List</h1>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Created At</th>
+                    <th>完了ボタン</th>
+                </tr>
+            </thead>
+            {{ range .}}
+                <tbody>
+                    <th>
+                        <a href="detail?todo_id={{ .ID }}">{{.Title}}</a>
+                    </th>
+                    <th>{{ .CreatedAt.Format "2006/01/02 15:04" }}</th>
+                    <th>
+                        <a href="delete_todo?&todo_id={{ .ID }}">Delete ToDo</a>
+                    </th>
+                </tbody>
+            {{ end }}
+        </table>
+        <div>
+            <a href="new_todo">新規作成画面</a>
+        </div>
+    </div>
+</body>
+</html>

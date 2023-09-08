@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<div>
+    <h1>Detail Page</h1>
+    <ul>
+        <li>Title: {{ .Title }}</li>
+        <li>Content: {{ .Content }}</li>
+        <li>Updated At: {{ .UpdatedAt.Format "2006/01/02 15:04" }}</li>
+    </ul>
+</div>
+<div>
+    <a href="edit?todo_id={{ .ID }}">編集する</a>
+    <a href="all_todos">一覧画面に戻る</a>
+</div>
+</body>
+</html>

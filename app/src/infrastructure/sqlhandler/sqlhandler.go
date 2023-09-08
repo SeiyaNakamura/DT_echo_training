@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"app/src/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
@@ -25,5 +26,6 @@ func NewSqlHandler() *SqlHandler {
 		log.Fatalln(connection + "database can't connect")
 	}
 	sqlHandler.DB = DB
+	DB.AutoMigrate(model.Todos{})
 	return sqlHandler
 }
