@@ -10,6 +10,7 @@
     <ul>
         <li>Title: {{ .Title }}</li>
         <li>Content: {{ .Content }}</li>
+        <li>Created At: {{ .CreatedAt.Format "2006/01/02 15:04" }}</li>
         <li>Updated At: {{ .UpdatedAt.Format "2006/01/02 15:04" }}</li>
     </ul>
 </div>
